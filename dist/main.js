@@ -1,35 +1,17 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Dog_1 = require("./Dog");
+const Cat_1 = require("./Cat");
 
-class Animal {
-    constructor(name) {
-        this._name = name;
-    }
-    
-    get name() {
-        return this._name;
-    }
-    set name(value) {
-        this._name = value;
-    }
-    
-    speak() {
-        console.log('Animal speaks');
-    }
-}
+const dog = new Dog_1.Dog('Buddy', 3, 'Golden Retriever');
+const cat = new Cat_1.Cat('Whiskers', 2, 'Black');
 
-class Dog extends Animal {
-    constructor(name) {
-        super(name);
-    }
-   
-    speak() {
-        console.log(`${this.name} says Woof! Woof!`);
-    }
-}
-
-const dog = new Dog('Buddy');
-console.log(dog.name); 
 dog.speak(); 
+cat.speak(); 
 
-dog.name = 'Max';
-console.log(dog.name); 
+dog.doTrick(); 
+cat.hunt(); 
+
+console.log(`${dog.name} is ${dog.age} years old.`); 
+dog.age = 4;
+console.log(`${dog.name} is now ${dog.age} years old.`); 

@@ -1,43 +1,19 @@
-
-class Animal {
-	private _name: string
-
-	constructor(name: string) {
-		this._name = name
-	}
-
-	
-	get name(): string {
-		return this._name
-	}
-
-	set name(value: string) {
-		this._name = value
-	}
-
-	
-	speak(): void {
-		console.log('Animal speaks')
-	}
-}
+import { Dog } from './Dog'
+import { Cat } from './Cat'
 
 
-class Dog extends Animal {
-	constructor(name: string) {
-		super(name) 
-	}
-
-	
-	speak(): void {
-		console.log(`${this.name} says Woof! Woof!`)
-	}
-}
+const dog = new Dog('Buddy', 3, 'Golden Retriever')
+const cat = new Cat('Whiskers', 2, 'Black')
 
 
-const dog = new Dog('Buddy')
-console.log(dog.name) 
 dog.speak() 
+cat.speak() 
 
 
-dog.name = 'Max'
-console.log(dog.name) 
+dog.doTrick() 
+cat.hunt() 
+
+
+console.log(`${dog.name} is ${dog.age} years old.`)
+dog.age = 4
+console.log(`${dog.name} is now ${dog.age} years old.`) 
